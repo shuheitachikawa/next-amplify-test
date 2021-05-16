@@ -5,4 +5,7 @@ module.exports = {
   experimental: {
     optimizeFonts: true,
   },
+  env: {
+    apiKey: 'test'
+  }
 };
