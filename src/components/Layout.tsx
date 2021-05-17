@@ -126,7 +126,7 @@ export const Layout: VFC<{ children: ReactNode }> = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Next-Amplify test
           </Typography>
         </Toolbar>
       </AppBar>
