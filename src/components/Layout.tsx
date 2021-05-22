@@ -63,7 +63,7 @@ interface Props {
   window?: () => Window;
 }
 
-export const Layout: VFC<{ children: ReactNode }> = (props) => {
+export const Layout = (props: any) => {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -75,22 +75,22 @@ export const Layout: VFC<{ children: ReactNode }> = (props) => {
 
   const menus = [
     {
-      name: 'LOGIN',
-      path: '/login'
+      name: "LOGIN",
+      path: "/login",
     },
     {
-      name: 'HOME',
-      path: '/home'
+      name: "HOME",
+      path: "/home",
     },
     {
-      name: 'SAMPLE',
-      path: '/sample'
+      name: "SAMPLE",
+      path: "/sample",
     },
     {
-      name: 'TODO',
-      path: '/todos'
+      name: "TODO",
+      path: "/todos",
     },
-  ]
+  ];
 
   const drawer = (
     <div>

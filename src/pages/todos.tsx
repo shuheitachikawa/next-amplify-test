@@ -46,22 +46,21 @@ export const getServerSideProps = async (context: any) => {
   };
 };
 
-const useStyles = () =>
-  makeStyles({
-    table: {
-      minWidth: 650,
-    },
-    form: {
-      display: "flex"
-    }
-  });
+const useStyles = makeStyles(() => ({
+  table: {
+    minWidth: 650,
+  },
+  form: {
+    display: "flex",
+  },
+}));
 
 const Todos: NextPage<Props> = ({ todos }) => {
   const [data, setData] = useState(todos);
   const [todo, setTodo] = useState("");
   const classes = useStyles();
 
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (event: any) => {
     setTodo(event.target.value);
   };
 
@@ -70,7 +69,7 @@ const Todos: NextPage<Props> = ({ todos }) => {
     const payload: CreateTodoInput = {
       description: todo || "",
     };
-    const newData = await API.graphql(
+    const newData: any = await API.graphql(
       graphqlOperation(createTodo, {
         input: payload,
       })
@@ -112,14 +111,14 @@ const Todos: NextPage<Props> = ({ todos }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((todo) => (
-              <TableRow key={todo.id} hover="true">
+            {data.map((todo: any) => (
+              <TableRow key={todo.id}>
                 <TableCell component="th" scope="row">
                   {todo.id}
                 </TableCell>
                 <TableCell align="right">{todo.description}</TableCell>
                 <TableCell align="right">
-                  <Button color="error" onClick={() => handleDeleteTodo(todo.id)}>
+                  <Button onClick={() => handleDeleteTodo(todo.id)}>
                     削除
                   </Button>
                 </TableCell>
